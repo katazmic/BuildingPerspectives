@@ -3,8 +3,6 @@ import urllib2
 import json
 
 
-
-# scraping whiskycast.com
 linkList = []
 nameList = []
 
