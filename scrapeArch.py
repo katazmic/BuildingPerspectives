@@ -53,6 +53,11 @@ for i in linkList:
 
     MetaData.update({'Author':prBody.find("p",{"class":"authorCredit"}).get_text()})
 
+    imageLink = soup.find("div",{"id":"photodiv"}).find('img').get('src')
+    urlI = i[:-len(i.split('/')[-1])]
+    MetaData.update({'Image':urlI+imageLink})
+    MetaData.update({'Link':i})
+
     Body = ''
     for p in prBody.findAll("p")[1:]:
         Body = Body + p.get_text()
